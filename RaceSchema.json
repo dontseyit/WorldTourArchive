@@ -1,0 +1,60 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/yourusername/yourrepository/main/path/to/your-schema.json",
+    "title": "Race",
+    "description": "UCI World Tour Cycling Race",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Known name of the race",
+            "type": "string"
+            },
+        "country": {
+            "description": "Country where race is held",
+            "type": "string"
+            },
+        "category": {
+            "description": "Category of race",
+            "type": "string",
+            "enum": ["one-day", "stage", "monument", "grand-tour"]
+            },
+        "when": {
+            "description": "The approximate date that race usually takes place",
+            "type": "string"
+            },
+        "first_edition": {
+            "description": "The year the race was held for the first time",
+            "type": "string",
+            "pattern": "^(18|19|20)\\d{2}$"
+            },
+        "distance": {
+            "description": "The approximate distance of race if it's a one-day race",
+            "minimum": 0,
+            "maximum": 300,
+            "type": ["number", "null"],
+            "default": null
+            },
+        "is_classic": {
+            "description": "If race is a classic, include the name of the classics",
+            "type": ["string", "null"],
+            "default": null
+        },
+        "also_known_as": {
+            "description": "Other names or nicknames for the race",
+            "type": "array",
+            "default": []
+        },
+        "pcs_url": {
+            "description": "URL for race on ProCyclingStats",
+            "type": "string",
+            "format": "uri"
+        },
+        "insights": {
+            "description": "Fun or important, insightful information that is not merely textbook knowledge",
+            "type": ["string", "null"],
+            "default": null
+    },
+    "required": ["name", "country", "category", "when", "first_edition", "distance", "is_classic"],
+    "additionalProperties": false
+  }
+  
