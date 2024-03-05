@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/yourusername/yourrepository/main/path/to/your-schema.json",
+    "$id": "https://raw.githubusercontent.com/dontseyit/world-tour-archive/main/RaceSchema.json",
     "title": "Race",
     "description": "UCI World Tour Cycling Race",
     "type": "object",
@@ -53,8 +53,9 @@
             "description": "Fun or important, insightful information that is not merely textbook knowledge",
             "type": ["string", "null"],
             "default": null
+        }
     },
     "required": ["name", "country", "category", "when", "first_edition", "distance", "is_classic"],
     "additionalProperties": false
-  }
+}
   
